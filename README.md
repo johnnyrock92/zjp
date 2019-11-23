@@ -26,8 +26,8 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >+ Cyclomatic Complexity (CC): 7
 >
 >#### Code smells
->+ Powielony kod (Duplicated Code)
->+ Długa metoda (Long method)
+>+ Powielony kod **(Duplicated Code)**
+>+ Długa metoda **(Long Method)**
 
 
 >### ```statement_v1.py```
@@ -37,7 +37,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >+ Cyclomatic Complexity (CC): 15
 >
 >#### Dokonane refaktoryzacje:
->+ Ekstrakcja metody (Extract Method)
+>+ Ekstrakcja metody **(Extract Method)**
 >    - utworzenie funkcji openJsonFile()
 >    - utworzenie funkcji amountFor()
 >    - utworzenie funkcji playFor()
@@ -45,14 +45,16 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >    - utworzenie funkcji totalVolumeCredits()
 >    - utworzenie funkcji totalAmount()
 >
->+ Zmiana nazw zmiennych 
+>+ Zmiana nazw zmiennych **(Rename Variable)**
 >    - perf -> aPerformance
 >    - użycie nazwy result w nowych funkcjach
 >
->+ Zmniejszenie liczby parametrów
+>+ Zmniejszenie liczby parametrów **(Remove Parameter)**
 >    - usunięcie parametru play z funkcji amountFor()
 >
->+ Zastąpienie zmiennej tymczasowej zapytaniem
+>+ Zastąpienie zmiennej tymczasowej zapytaniem **(Replace Temp with Query)**
 >    - wchłonięcie zmiennej play i użycie w jej miejsce funkcji playFor()
 >    - wchłonięcie zmiennej thisAmount i użycie w jej miejsce funkcji amountFor()
-
+> + Podział pętli **(Split Loop)**
+>   - totalVolumeCredits()
+>   - totalAmount()
