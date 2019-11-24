@@ -18,11 +18,13 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 ## Narzędzia
 + Wily
 + Radon
++ PyLint
++ Flake8
 ---
 ## Proces refaktoryzacji
 >### [```statement_v0.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v0.py)
 >#### Metryki:
->+ Maintainability Index (MI): 65.9664
+>+ Average complexity: B (7.0)
 >+ Lines of Code (LOC): 42
 >+ Cyclomatic Complexity (CC): 7
 >
@@ -33,7 +35,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 
 >### [```statement_v1.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v1.py)
 >#### Metryki:
->+ Maintainability Index (MI): 72.16
+>+ Average complexity: A (2.14)
 >+ Lines of Code (LOC): 76
 >+ Cyclomatic Complexity (CC): 15
 >
@@ -65,8 +67,17 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 
 >### [```statement_v2.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v2.py)
 >#### Metryki:
-> + Maintainability Index (MI):
-> + Lines of Code (LOC):
-> + Cyclomatic Complexity (CC):
+> + Average complexity: A (1.58)
+> + Lines of Code (LOC): 109
+> + Cyclomatic Complexity (CC): 19
 >
 >#### Dokonane refaktoryzacje:
+> + Ekstrakcja metody **(Extract Method)**
+>   - utworzenie funkcji renderPlainText()
+>   - utworzenie funkcji run()
+>   - rozłożenie instrukcji warunkowych poprzez utworzenie zagnieżdżonych funkcji comedy() oraz tragedy() w funkcji amountFor()
+> + Włączenie funkcji do nowych klas **(Combine Functions into Class)**
+>   - utworzenie klasy Statement
+>   - utworzenie klasy ReadData
+> + Zmiana nazw funkcji **(Rename Function)**
+>   - konwencja z użyciem znaku podkreślenia: nazwa_nazwa()

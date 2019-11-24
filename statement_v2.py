@@ -1,76 +1,109 @@
+"""Moduł obliczający rachunek"""
 import json
 import math
 
-def statement(invoices, plays):
-    '''
-    Return: rachunek w formie stringa
-    '''
-    result = 'Rachunek dla {}\n'.format(invoices['customer'])
-    for perf in invoices['performances']:
-        result += " {}: {:.2f} zł (liczba miejsc: {})\n".format(playFor(perf)['name'], amountFor(perf)/100, perf['audience'])
-    result += "Należność: {:.2f} zł\n".format(totalAmount()/100)
-    result += "Punkty promocyjne: {}".format(totalVolumeCredits())
-    return result
 
-def totalAmount():
-    '''
-    Return: kwota do zapłaty
-    '''
-    result = 0
-    for perf in invoices['performances']:
-        result += amountFor(perf)
-    return result 
+class Statement():
+    """Klasa obliczająca rachunek"""
 
-def totalVolumeCredits():
-    '''
-    Return: suma punktów promocyjnych
-    '''
-    result = 0
-    for perf in invoices['performances']:
-        result += volumeCreditsFor(perf)
-    return result
+    def __init__(self, invoices, plays):
+        self.invoices = invoices
+        self.plays = plays
 
-def volumeCreditsFor(aPerformance):
-    '''
-    Return: ilość punktów promocyjnych
-    '''
-    result = max(aPerformance['audience'] - 30, 0)
-    # Przyznanie dodatkowego punktu promocyjnego za każdych 5 widzów komedii
-    if "komedia" == playFor(aPerformance)['type']:
-        result += math.floor(aPerformance['audience'] / 5)
-    return result
+    def print_statement(self):
+        """Wyświetla rachunek na ekranie"""
 
-def playFor(aPerformance):
-    '''
-    Return: Opis przedstawienia
-    '''
-    return plays[aPerformance['playID']]
+        print(self.statement(self.invoices))
 
-def amountFor(aPerformance):
-    '''
-    Return: cena jednego przedstawienia
-    '''
-    result = 0
-    if playFor(aPerformance)['type'] == "tragedia":
-        result = 40000
-        if aPerformance['audience'] > 30:
-            result += 1000 * (aPerformance['audience'] - 30)
-    elif playFor(aPerformance)['type'] == "komedia":
-        result = 30000
-        if aPerformance['audience'] > 20:
-            result += 10000 + 500 * (aPerformance['audience'] - 20)
-        result += 300 * aPerformance['audience']
-    else:
-        print('Nieznany typ przedstawienia: {}'.format(playFor(aPerformance)['type']))
-    
-    return result
+    def statement(self, invoices):
+        """Zwraca gotowy rachunek"""
 
-def openJsonFile(filepath):
-    '''
-    Return: dane z pliku
-    '''
-    return json.load(open(filepath))
+        return self.render_plain_text(invoices)
 
-invoices = openJsonFile('Data/invoices.json')
-plays = openJsonFile('Data/plays.json')
-print(statement(invoices, plays))
+    def render_plain_text(self, invoices):
+        """Return: rachunek w formie stringa"""
+
+        result = 'Rachunek dla {}\n'.format(invoices['customer'])
+        for perf in invoices['performances']:
+            result += " {}: {:.2f} zł (liczba miejsc: {})\n".format(
+                self.play_for(perf)['name'],
+                self.amount_for(perf)/100, perf['audience'])
+        result += "Należność: {:.2f} zł\n".format(self.total_amount()/100)
+        result += "Punkty promocyjne: {}".format(self.total_volume_credits())
+        return result
+
+    def total_amount(self):
+        """Return: kwota do zapłaty"""
+
+        result = 0
+        for perf in self.invoices['performances']:
+            result += self.amount_for(perf)
+        return result
+
+    def total_volume_credits(self):
+        """Return: suma punktów promocyjnych"""
+
+        result = 0
+        for perf in self.invoices['performances']:
+            result += self.volume_credits_for(perf)
+        return result
+
+    def volume_credits_for(self, performance):
+        """Return: ilość punktów promocyjnych"""
+
+        result = max(performance['audience'] - 30, 0)
+        # Przyznanie dodatkowego punktu
+        # promocyjnego za każdych 5 widzów komedii
+        if self.play_for(performance)['type'] == "komedia":
+            result += math.floor(performance['audience'] / 5)
+        return result
+
+    def play_for(self, performance):
+        """Return: Opis przedstawienia"""
+
+        return self.plays[performance['playID']]
+
+    def amount_for(self, performance):
+        """Return: cena jednego przedstawienia"""
+        
+        def tragedy(performance):
+            # Switch tragedia
+            result = 40000
+            if performance['audience'] > 30:
+                result += 1000 * (performance['audience'] - 30)
+            return result
+
+        def comedy(performance):
+            # Switch komedia
+            result = 30000
+            if performance['audience'] > 20:
+                result += 10000 + 500 * (performance['audience'] - 20)
+            result += 300 * performance['audience']
+            return result
+
+        result = 0
+        # switch: przechowuje klucze (typ przedstawienia)
+        # z wartością w postaci funkcji
+        switch = {'tragedia': tragedy(performance), 'komedia': comedy(performance)}
+        # try: próbuje dopasować typ przedstawienia do klucza w zmiennej switch
+        try:
+            result += switch[self.play_for(performance)['type']]
+        # except: gdy nie ma odpowiedniego klucza
+        # w zmiennej switch wyświetla napis
+        except TypeError:
+            print('Nieznany typ przedstawienia: {}'.format(self.plays['type']))
+        return result
+
+
+class ReadData():
+    """Klasa odczytująca dane"""
+    def __init__(self, invoices, plays):
+        self.invoices = json.load(open(invoices))
+        self.plays = json.load(open(plays))
+
+
+# Tworzenie obiektu
+DATA = ReadData('Data/invoices.json', 'Data/plays.json')
+
+# Wywołanie metody print_statement() z klasy Statement
+Statement(DATA.invoices, DATA.plays).print_statement()
