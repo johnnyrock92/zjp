@@ -20,7 +20,9 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 + Radon
 + PyLint
 + Flake8
++ [![CodeFactor](https://www.codefactor.io/repository/github/johnnyrock92/zjp/badge)](https://www.codefactor.io/repository/github/johnnyrock92/zjp)
 ---
+
 ## Proces refaktoryzacji
 >### [```statement_v0.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v0.py)
 >#### Metryki:
