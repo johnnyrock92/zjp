@@ -25,8 +25,8 @@ class Statement():
             result += " {}: {:.2f} zł (liczba miejsc: {})\n".format(
                 self.play_for(perf)['name'],
                 self.amount_for(perf)/100, perf['audience'])
-        result += "Należność: {:.2f} zł\n".format(self.total_amount()/100)
-        result += "Punkty promocyjne: {}".format(self.total_volume_credits())
+        result += "Należność: {:.2f} zł\n".format(self.total_amount()/100)+\
+        "Punkty promocyjne: {}".format(self.total_volume_credits())
         return result
 
     def total_amount(self):
@@ -75,7 +75,7 @@ class Statement():
             result = 0
             # switch: przechowuje klucze (typ przedstawienia)
             # z wartością w postaci funkcji
-            switch = {'tragedia': tragedy(performance),'komedia': comedy(performance)}
+            switch = {'tragedia': tragedy(performance), 'komedia': comedy(performance)}
             # try: próbuje dopasować typ przedstawienia do klucza w zmiennej switch
             try:
                 result += switch[self.play_for(performance)['type']]

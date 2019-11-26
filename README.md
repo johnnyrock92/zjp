@@ -1,11 +1,14 @@
 Uniwersytet Gdański - Informatyka NS II st. semestr 1. - 2019/2020
 =
+Tytuł: Refaktoryzacja kodu
+-
+
 Autor: Schonrock Janusz 246654
 -
-Link: https://github.com/johnnyrock92/zjp
+Link do repozytorium: https://github.com/johnnyrock92/zjp
 -
-# Refaktoryzacja kodu
-### Kod do refaktoryzacji został napisany w języku Python na podstawie kodu z książki [Refaktoryzacja. Ulepszanie struktury istniejącego kodu](https://martinfowler.com/books/refactoring.html) Martina Fowlera. Celem projektu jest refaktoryzacja kodu, czyli poprawienie jego struktury oraz zastosowanie konwencji przedstawionych w książce.
+# Kontekst
+### Kod do refaktoryzacji został napisany w języku Python na podstawie kodu z książki [Refaktoryzacja. Ulepszanie struktury istniejącego kodu](https://martinfowler.com/books/refactoring.html) Martina Fowlera (str. 18-19). Celem projektu jest refaktoryzacja kodu, czyli poprawienie jego struktury oraz zastosowanie konwencji przedstawionych w książce, które mają spowodować zwiększenie czytelności kodu.
 
 ---
 ## Opis programu
