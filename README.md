@@ -65,7 +65,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >   - totalAmount()
 >
 >#### Code smells
-> + Skomplikowane instrukcje warunkowe (Switch Statements)
+> + Skomplikowane instrukcje warunkowe **(Switch Statements)**
 
 >### [```statement_v2.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v2.py)
 >#### Metryki:
@@ -85,8 +85,8 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >   - konwencja z użyciem znaku podkreślenia: nazwa_nazwa()
 >
 >#### Code smells
-> + Nadmiar komentarzy (Comments)
-> + Pojemnik na dane (Data Class)
+> + Nadmiar komentarzy **(Comments)**
+> + Pojemnik na dane **(Data Class)**
 
 
 >### [```statement_v_infinity.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v_infinity.py)
