@@ -1,8 +1,8 @@
 import json
 import math
 
-plays = json.load(open('Data/plays.json'))
-invoices = json.load(open('Data/invoices.json'))
+plays = json.load(open('../Data/plays.json'))
+invoices = json.load(open('../Data/invoices.json'))
 
 def statement(invoices, plays):
     totalAmount = 0

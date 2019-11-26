@@ -71,6 +71,6 @@ def openJsonFile(filepath):
     '''
     return json.load(open(filepath))
 
-invoices = openJsonFile('Data/invoices.json')
-plays = openJsonFile('Data/plays.json')
+invoices = openJsonFile('../Data/invoices.json')
+plays = openJsonFile('../Data/plays.json')
 print(statement(invoices, plays))

@@ -1,8 +1,8 @@
 import unittest
 from statement_v2 import Statement, json
 
-plays = json.load(open('Data/plays.json'))
-invoices = json.load(open('Data/invoices.json'))
+plays = json.load(open('../Data/plays.json'))
+invoices = json.load(open('../Data/invoices.json'))
 ST = Statement(invoices, plays)
 
 class StatementTest(unittest.TestCase):

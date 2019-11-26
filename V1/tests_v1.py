@@ -3,8 +3,8 @@ from statement_v1 import *
 
 class StatementTest(unittest.TestCase):
     def test_result(self):
-        plays = json.load(open('Data/plays.json'))
-        invoices = json.load(open('Data/invoices.json'))
+        plays = json.load(open('../Data/plays.json'))
+        invoices = json.load(open('../Data/invoices.json'))
         result = 'Rachunek dla SuperFirma\n'
         result += " Hamlet: 650.00 zł (liczba miejsc: 55)\n"
         result += " Jak wam sie podoba: 580.00 zł (liczba miejsc: 35)\n"
