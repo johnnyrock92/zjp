@@ -24,7 +24,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 ---
 
 ## Proces refaktoryzacji
->### [```statement_v0.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v0.py)
+>### [```statement_v0.py```](https://github.com/johnnyrock92/zjp/blob/master/V0/statement_v0.py)
 >#### Metryki:
 >+ Average complexity: B (7.0)
 >+ Lines of Code (LOC): 42
@@ -35,7 +35,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >+ Długa metoda **(Long Method)**
 
 
->### [```statement_v1.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v1.py)
+>### [```statement_v1.py```](https://github.com/johnnyrock92/zjp/blob/master/V1/statement_v1.py)
 >#### Metryki:
 >+ Average complexity: A (2.14)
 >+ Lines of Code (LOC): 76
@@ -67,7 +67,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >#### Code smells
 > + Skomplikowane instrukcje warunkowe **(Switch Statements)**
 
->### [```statement_v2.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v2.py)
+>### [```statement_v2.py```](https://github.com/johnnyrock92/zjp/blob/master/V2/statement_v2.py)
 >#### Metryki:
 > + Average complexity: A (1.58)
 > + Lines of Code (LOC): 109
@@ -89,7 +89,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 > + Pojemnik na dane **(Data Class)**
 
 
->### [```statement_v_infinity.py```](https://github.com/johnnyrock92/zjp/blob/master/statement_v_infinity.py)
+>### [```statement_v_infinity.py```](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/statement_v_infinity.py)
 >#### Metryki:
 > + Average complexity: A (1.5)
 > + Lines of Code (LOC): 91
