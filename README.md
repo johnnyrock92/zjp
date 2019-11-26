@@ -100,3 +100,8 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >   - przesunięcie nadmiernie skomentowanego fragmentu do funkcji switch()
 > + Przeniesienie metody **(Move Method)**
 >   - przeniesienie metody wczytywania danych do klasy Statement() i usunięcie klasy ReadData()
+---
+## Porównanie wyników
+<p align="center">
+  <img src="Images/wykres.png">
+</p>
