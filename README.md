@@ -18,7 +18,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 
 ---
 
-## Narzędzia
+## Narzędzia metryczne
 + Wily
 + Radon
 + PyLint
@@ -27,12 +27,38 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 + [![BCH compliance](https://bettercodehub.com/edge/badge/johnnyrock92/zjp?branch=master)](https://bettercodehub.com/)
 ---
 
+## Metryki
+## ```Wily/Radon```
+### Cyclomatic Complexity (CC)
+|CC score|Rank|Risk 
+|-|-|-
+|1 - 5|A|low - simple block
+|6 - 10|B|low - well structured and stable block
+|11 - 20|C |moderate - slighltly complex block
+|21 - 30|D|more than moderate - more complex block
+|31 - 40|E|high - complex block, alarming
+|41+|F|very high - error-prone, unstable block
+
+### Maintainability Index (MI)
+|MI score|Rank|Maintainability
+|-|-|-
+|100 - 20| A |Very high
+|19 - 10| B |Medium
+|9 - 0| C |Extremely low
+
+## ```PyLint/Flake8```
+Wskazuje błędy w składni kodu.
+
+## ```CodeFactor/Better Code```
+Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem błędów.
+
+---
+
 ## Proces refaktoryzacji
->### [```V0```](https://github.com/johnnyrock92/zjp/blob/master/V0/statement_v0.py)
+>### [```V0```](https://github.com/johnnyrock92/zjp/blob/master/V0)
 >#### Metryki:
->+ Average complexity: B (7.0)
+>+ Average complexity (CC): B (7.0)
 >+ Lines of Code (LOC): 42
->+ Cyclomatic Complexity (CC): 7
 >+ Maintainability Index (MI): 65.97
 >
 >#### Code smells
@@ -40,11 +66,10 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >+ Długa metoda **(Long Method)**
 
 
->### [```V1```](https://github.com/johnnyrock92/zjp/blob/master/V1/statement_v1.py)
+>### [```V1```](https://github.com/johnnyrock92/zjp/blob/master/V1)
 >#### Metryki:
->+ Average complexity: A (2.14)
+>+ Average complexity (CC): A (2.14)
 >+ Lines of Code (LOC): 76
->+ Cyclomatic Complexity (CC): 15
 >+ Maintainability Index (MI): 72.16
 >
 >#### Dokonane refaktoryzacje:
@@ -73,11 +98,10 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >#### Code smells
 > + Skomplikowane instrukcje warunkowe **(Switch Statements)**
 
->### [```V2```](https://github.com/johnnyrock92/zjp/blob/master/V2/statement_v2.py)
+>### [```V2```](https://github.com/johnnyrock92/zjp/blob/master/V2)
 >#### Metryki:
-> + Average complexity: A (1.58)
+> + Average complexity (CC): A (1.58)
 > + Lines of Code (LOC): 109
-> + Cyclomatic Complexity (CC): 19
 >+ Maintainability Index (MI): 61.93
 >
 >#### Dokonane refaktoryzacje:
@@ -96,12 +120,11 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 > + Pojemnik na dane **(Data Class)**
 
 
->### [```V3```](https://github.com/johnnyrock92/zjp/blob/master/V_3/statement_v3.py)
+>### [```V3```](https://github.com/johnnyrock92/zjp/blob/master/V3)
 >#### Metryki:
-> + Average complexity: A (1.5)
+> + Average complexity (CC): A (1.5)
 > + Lines of Code (LOC): 91
-> + Cyclomatic Complexity (CC): 15
->+ Maintainability Index (MI): 60.68
+> + Maintainability Index (MI): 60.68
 >
 >#### Dokonane refaktoryzacje:
 > + Ekstrakcja metody **(Extract Method)**
@@ -114,11 +137,10 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 
 >### [```V Infinity```](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/core)
 >#### Metryki:
-> |  | statement.py | calculate.py | render.py | Średnio lub Suma
+> |  | [statement.py](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/core/statement.py) | [calculate.py](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/core/calculate.py) | [render.py](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/core/render.py) | Średnio lub Suma
 > | - | - | - | - | - |
-> | Average complexity | A (1.25) | A (1.66) | A (2.0) | A (1.63)
+> | Average complexity (CC) | A (1.25) | A (1.66) | A (2.0) | A (1.63)
 > | Lines of Code (LOC) | 18 | 61 | 23 | 102
-> | Cyclomatic Complexity (CC) | 5 | 10 | 6 | 7
 > | Maintainability Index (MI) | 100 | 74 | 91.16 | 88.38
 >
 >#### Dokonane refaktoryzacje:
@@ -128,5 +150,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 
 ## Porównanie wyników
 <p align="center">
-  <!-- <img src="Images/wykres.png"> -->
+  <img src="Images/wykres.png">
 </p>
+
+
