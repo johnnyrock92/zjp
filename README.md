@@ -112,7 +112,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >#### Code smells
 > + Nadmiernie rozbudowana klasa **(Large Class)**
 
->### [```V Infinity```](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/statement_v_infinity.py)
+>### [```V Infinity```](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/core)
 >#### Metryki:
 > |  | statement.py | calculate.py | render.py | Średnio lub Suma
 > | - | - | - | - | - |
