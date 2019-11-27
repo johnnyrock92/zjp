@@ -9,7 +9,7 @@ Link do repozytorium: https://github.com/johnnyrock92/zjp
 -
 ---
 ## Kontekst
-### Kod do refaktoryzacji został napisany w języku Python na podstawie kodu z książki [Refaktoryzacja. Ulepszanie struktury istniejącego kodu](https://martinfowler.com/books/refactoring.html) Martina Fowlera (str. 18-19). Celem projektu jest refaktoryzacja kodu, czyli poprawienie jego struktury oraz zastosowanie konwencji przedstawionych w książce, które mają spowodować zwiększenie czytelności kodu.
+### Kod do refaktoryzacji został napisany w języku Python na podstawie kodu z książki [Refaktoryzacja. Ulepszanie struktury istniejącego kodu. Wydanie II](https://martinfowler.com/books/refactoring.html) Martina Fowlera (str. 18-19). Celem projektu jest refaktoryzacja kodu, czyli poprawienie jego struktury oraz zastosowanie konwencji przedstawionych w książce, które mają spowodować zwiększenie czytelności i jakości kodu.
 
 ---
 ## Opis programu
@@ -20,7 +20,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 ---
 
 ## Metryki
-## ```Wily/Radon```
+## [```Wily```](https://wily.readthedocs.io/en/latest) / [```Radon```](https://radon.readthedocs.io/en/latest)
 ### Cyclomatic Complexity (CC)
 |CC score|Rank|Risk 
 |-|-|-
@@ -38,10 +38,10 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 |19 - 10| B |Medium
 |9 - 0| C |Extremely low
 
-## ```PyLint/Flake8```
+## [```PyLint```](https://www.pylint.org) / [```Flake8```](http://flake8.pycqa.org/en/latest)
 Wskazuje błędy w składni kodu.
 
-## ```CodeFactor/Better Code```
+## [```CodeFactor```](https://www.codefactor.io) / [```Better Code```](https://bettercodehub.com)
 Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem błędów.
 
 [![CodeFactor](https://www.codefactor.io/repository/github/johnnyrock92/zjp/badge)](https://www.codefactor.io/repository/github/johnnyrock92/zjp)
