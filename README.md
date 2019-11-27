@@ -30,7 +30,6 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 |21 - 30|D|more than moderate - more complex block
 |31 - 40|E|high - complex block, alarming
 |41+|F|very high - error-prone, unstable block
-|||
 
 </br></br>
 
@@ -40,7 +39,6 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 |100 - 20| A |Very high
 |19 - 10| B |Medium
 |9 - 0| C |Extremely low
-|||
 
 ## [```PyLint```](https://www.pylint.org) / [```Flake8```](http://flake8.pycqa.org/en/latest)
 Wskazuje błędy w składni kodu.
