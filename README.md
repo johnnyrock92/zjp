@@ -24,6 +24,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 + PyLint
 + Flake8
 + [![CodeFactor](https://www.codefactor.io/repository/github/johnnyrock92/zjp/badge)](https://www.codefactor.io/repository/github/johnnyrock92/zjp)
++ [![BCH compliance](https://bettercodehub.com/edge/badge/johnnyrock92/zjp?branch=master)](https://bettercodehub.com/)
 ---
 
 ## Proces refaktoryzacji
@@ -92,7 +93,7 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 > + Pojemnik na dane **(Data Class)**
 
 
->### [```statement_v_infinity.py```](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/statement_v_infinity.py)
+>### [```statement_v3.py```](https://github.com/johnnyrock92/zjp/blob/master/V_3/statement_v3.py)
 >#### Metryki:
 > + Average complexity: A (1.5)
 > + Lines of Code (LOC): 91
@@ -103,7 +104,24 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 >   - przesunięcie nadmiernie skomentowanego fragmentu do funkcji switch()
 > + Przeniesienie metody **(Move Method)**
 >   - przeniesienie metody wczytywania danych do klasy Statement() i usunięcie klasy ReadData()
+>
+>#### Code smells
+> + Nadmiernie rozbudowana klasa **(Large Class)**
 ---
+
+>### [```statement_v_infinity.py```](https://github.com/johnnyrock92/zjp/blob/master/V_Infinity/statement_v_infinity.py)
+>#### Metryki:
+> + Average complexity:
+> + Lines of Code (LOC):
+> + Cyclomatic Complexity (CC):
+>
+>#### Dokonane refaktoryzacje:
+> + Wydzielenie klasy **(Extract Class)**
+>   - przeniesienie metod do nowych modułów z utworzonymi klasami Render oraz Calculate
+
+
+
+
 ## Porównanie wyników
 <p align="center">
   <img src="Images/wykres.png">
