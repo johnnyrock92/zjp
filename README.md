@@ -18,15 +18,6 @@ Aktorzy zapisują dane przedstawień w pliku ```plays.json```, dane do rachunku 
 
 ---
 
-## Narzędzia metryczne
-+ Wily
-+ Radon
-+ PyLint
-+ Flake8
-+ [![CodeFactor](https://www.codefactor.io/repository/github/johnnyrock92/zjp/badge)](https://www.codefactor.io/repository/github/johnnyrock92/zjp)
-+ [![BCH compliance](https://bettercodehub.com/edge/badge/johnnyrock92/zjp?branch=master)](https://bettercodehub.com/)
----
-
 ## Metryki
 ## ```Wily/Radon```
 ### Cyclomatic Complexity (CC)
@@ -52,6 +43,8 @@ Wskazuje błędy w składni kodu.
 ## ```CodeFactor/Better Code```
 Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem błędów.
 
+[![CodeFactor](https://www.codefactor.io/repository/github/johnnyrock92/zjp/badge)](https://www.codefactor.io/repository/github/johnnyrock92/zjp)
+[![BCH compliance](https://bettercodehub.com/edge/badge/johnnyrock92/zjp?branch=master)](https://bettercodehub.com/)
 ---
 
 ## Proces refaktoryzacji
