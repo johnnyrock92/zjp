@@ -58,6 +58,12 @@ Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem bł
 >+ Lines of Code (LOC): 42
 >+ Maintainability Index (MI): 65.97
 >
+>#### Testy:
+>```
+>tests_v0.py .
+>1 passed
+>Wynik pozytywny 
+>```
 >#### Code smells
 >+ Powielony kod **(Duplicated Code)**
 >+ Długa metoda **(Long Method)**
@@ -91,7 +97,12 @@ Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem bł
 > + Podział pętli **(Split Loop)**
 >   - totalVolumeCredits()
 >   - totalAmount()
->
+>#### Testy:
+>```
+>tests_v1.py ............
+>12 passed
+>Wynik pozytywny
+>```
 >#### Code smells
 > + Skomplikowane instrukcje warunkowe **(Switch Statements)**
 
@@ -111,7 +122,12 @@ Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem bł
 >   - utworzenie klasy ReadData
 > + Zmiana nazw funkcji **(Rename Function)**
 >   - konwencja z użyciem znaku podkreślenia: nazwa_nazwa()
->
+>#### Testy:
+>```
+>tests_v2.py .............
+>13 passed
+>Wynik pozytywny 
+>```
 >#### Code smells
 > + Nadmiar komentarzy **(Comments)**
 > + Pojemnik na dane **(Data Class)**
@@ -128,7 +144,12 @@ Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem bł
 >   - przesunięcie nadmiernie skomentowanego fragmentu do funkcji switch()
 > + Przeniesienie metody **(Move Method)**
 >   - przeniesienie metody wczytywania danych do klasy Statement() i usunięcie klasy ReadData()
->
+>#### Testy:
+>```
+>tests_v3.py .............
+>13 passed
+>Wynik pozytywny 
+>```
 >#### Code smells
 > + Nadmiernie rozbudowana klasa **(Large Class)**
 
@@ -143,7 +164,33 @@ Narzędzia łączące cechy powyższych metryk i analizy składni pod kątem bł
 >#### Dokonane refaktoryzacje:
 > + Wydzielenie klasy **(Extract Class)**
 >   - przeniesienie metod do nowych modułów z utworzonymi klasami Render oraz Calculate
+>#### Testy:
+>```
+>tests.py .............
+>13 passed
+>Wynik pozytywny 
+>```
+></br>
 
 <p align="center">
   <img src="Images/wykres.png">
 </p>
+
+
+# Główne różnice pomiędzy wersjami kodu
+```
+V0 --> V1
+Rozkład jednej dużej funkcji na kilka funkcji
+```
+```
+V1 --> V2
+Utworzenie klas i przeniesienie definicji funkcji do utworzonych metod w klasach
+```
+```
+V2 --> V3
+Usunięcie klasy odczytującej dane (przeniesienie jej funkcjonalności do klasy Statement)
+```
+```
+V3 --> V Infinity
+Utworzenie modułów wraz z nowymi klasami (przeniesienie metod z klasy Statement)
+```
